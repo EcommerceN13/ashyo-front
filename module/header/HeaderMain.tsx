@@ -1,26 +1,57 @@
-import Link from 'next/link'
-import Image from 'next/image';
+"use client";
 import Button from '@/components/Button';
-import ArrowIcon from '@/icons';
-import Actions from './Action';
+import { ArrowIcon, MenuIcon } from '@/icons';
+import Image from 'next/image';
+import Link from 'next/link';
+import React, { useContext } from 'react';
 import Search from './Search';
+import Actions from './Actions';
+import { Context } from '@/context/Context';
 
 const HeaderMain = () => {
+  const { showCategory, setShowCategory } = useContext(Context);
+
   return (
-    <div className="containers !py-[30px]">
-      <div className="flex items-center justify-between">
-        <Link className='flex items-center' href={'/'}>
-          <Image className='scale-[1.5]' style={{width:"48px", height:"48px"}} src="/logo.svg" alt='Site Logo' width={48} height={48} priority/>
-          <span className="text-[39px] font-extrabold leading-[42.19px] text-[#134E9B]">Ashyo</span>
-        </Link>
-        <div className='flex items-center gap-[10px]'>
-            <Button extraClass='!py-[18px]' type='button' title='Kategoriya' iconPosition='right' icon={<ArrowIcon />}/>
-            <Search />
-        </div>
+  <div className='containers !pb-[25px] !pt-[25px] sm:!py-[30px]'>
+    <div className='flex items-center justify-between'>
+      <Link className='flex items-center' href={'/'}>
+        <Image
+          className='scale-[1.5]'
+          style={{ width: '48px', height: '48px' }}
+          src='/logo.svg'
+          alt='Site Logo'
+          width={48}
+          height={48}
+          priority
+        />
+        <span className='text-[39px] font-extrabold leading-[42.19px] text-[#134E9B]'>
+          Ashyo
+        </span>
+      </Link>
+      <div className='hidden xl:flex items-center gap-[10px]'>
+        <Button
+          onClick={() => setShowCategory(true)}
+          extrClass='sm:!py-[18px]'
+          type='button'
+          title='Kategorya'
+          iconPostion='right'
+          icon={
+            <ArrowIcon
+              classList={`${showCategory ? 'rotate-[-180deg]' : ''}`}
+            />
+          }
+        />
+        <Search />
+      </div>
+      <div className='flex items-center gap-[20px]'>
         <Actions />
+        <button className='xl:hidden'>
+          <MenuIcon />
+        </button>
       </div>
     </div>
+  </div>
   );
 };
 
-export default HeaderMain
+export default HeaderMain;
