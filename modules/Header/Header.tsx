@@ -3,6 +3,7 @@ import HeaderTop from './HeaderTop'
 import HeaderMain from './HeaderMain'
 import HeaderCategory from './HeaderCategory'
 import HeaderSearchMobile from './HeaderSearchMobile'
+import CategoryNestedList from './CategoryNestedList'
 
 export const Header = () => {
   return (
@@ -11,6 +12,7 @@ export const Header = () => {
         <HeaderMain />
         <HeaderCategory />
         <HeaderSearchMobile />
+        <CategoryNestedList />
     </header>
   )
 }

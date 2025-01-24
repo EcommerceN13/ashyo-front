@@ -9,7 +9,8 @@ import Actions from "./Actions";
 import { Context } from "@/context/Context";
 
 const HeaderMain = () => {
-  const { showCategory, setShowCategory } = useContext(Context);
+  const { showCategory, setShowCategory } = useContext(Context)
+  
   return (
     <div className="containers !pb-[25px] !pt-[64px] sm:!py-[30px]">
       <div className="flex items-center justify-between">
@@ -34,9 +35,7 @@ const HeaderMain = () => {
             type="button"
             title="Kategorya"
             iconPosition="right"
-            icon={
-              <ArrowIcon classList={`${showCategory && "rotate-[-180deg]"}`} />
-            }
+            icon={ <ArrowIcon classList={`${showCategory && "rotate-[-180deg]"}`} />}
           />
           <Search />
         </div>
