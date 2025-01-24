@@ -19,7 +19,8 @@ const CategoryNestedList = () => {
   const [nestedChild, setNestedChild] = useState<CategoryType[]>([]);
 
   function showCategoryChildren(data: CategoryType) {
-    setNestedChild(data?.children || []);
+    setNestedChild(data?.subCategories || []);
+    console.log(data)
   }
 
   return (
@@ -37,15 +38,14 @@ const CategoryNestedList = () => {
         } overflow-hidden flex bg-white shadow-md`}
       >
         <ul className="w-[52%] space-y-[15px] sm:space-y-0 sm:w-[35%] py-[13px] sm:py-[43px] px-[5px] sm:px-[32px] bg-[#EBEFF3]">
-          {categories.length > 0 ? (
-            categories.map((item: CategoryType) => (
+            {categories?.filter(e => e.parentCategoryId == null)?.map((item: CategoryType) => (
               <li
                 onMouseEnter={() => showCategoryChildren(item)}
                 key={item.id}
                 className="flex cursor-pointer items-center text-[14px] sm:text-[16px] gap-[15px] py-[8px] sm:py-[12px] px-[10px] sm:pl-[40px]"
               >
                 <Image
-                  src={`${IMAGE_API}/files/${item.icon}`}
+                  src={`${IMAGE_API}/${item.icon}`}
                   alt="Category icon"
                   width={24}
                   height={24}
@@ -54,16 +54,7 @@ const CategoryNestedList = () => {
                   {item.name}
                 </span>
               </li>
-            ))
-          ) : (
-            <div className="space-y-5">
-              <Skeleton className="h-5 w-full rounded-lg" />
-              <Skeleton className="h-5 w-full rounded-lg" />
-              <Skeleton className="h-5 w-full rounded-lg" />
-              <Skeleton className="h-5 w-full rounded-lg" />
-              <Skeleton className="h-5 w-full rounded-lg" />
-            </div>
-          )}
+            ))}
         </ul>
         <ul className="w-[48%] space-y-[23px] sm:space-y-0 sm:w-[65%] py-[13px] sm:py-[55px] px-[22px] sm:px-[73px] bg-white">
           {nestedChild.map((item: CategoryType) => (
