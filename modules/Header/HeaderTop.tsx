@@ -1,8 +1,8 @@
 import { LocationIcon } from "@/icons";
-import { HeaderTopListType } from "@/types/HeaderTopList";
 import Link from "next/link";
 import React from "react";
 import Lang from "./Lang";
+import { HeaderTopListType } from "@/types/HeaderTopList";
 
 const HeaderTop = () => {
   const navlist: HeaderTopListType[] = [
@@ -15,7 +15,7 @@ const HeaderTop = () => {
     {
       id: 2,
       title: "About Us",
-      path: "/about",
+      path: "/about-us",
       icon: null,
     },
     {
@@ -27,11 +27,10 @@ const HeaderTop = () => {
     {
       id: 4,
       title: "Contacts",
-      path: "/contact",
+      path: "/contacts",
       icon: null,
     },
   ];
-
 
   return (
     <div className="bg-[#EBEFF3] hidden sm:block py-[11px]">
@@ -39,7 +38,9 @@ const HeaderTop = () => {
         <div className="flex items-center gap-[28px]">
           {navlist.map((item: HeaderTopListType) => (
             <Link
-              className={`flex items-center ${item.icon && "gap-[8px]"}`}
+              className={`flex items-center text-[14px] text-[#545D6A] leading-[16.41px] ${
+                item.icon && "gap-[11px]"
+              }`}
               key={item.id}
               href={item.path}
             >
@@ -48,8 +49,13 @@ const HeaderTop = () => {
             </Link>
           ))}
         </div>
-        <div className="flex items-center gap-[28px]">
-          <Link className="text-[14px] font-semibold leading-[18.2px] text-[#545D6A]" href={'tel:+998711234567'}>+998 (71) 123-45-67</Link>
+        <div className="flex items-center gap-[25px]">
+          <Link
+            className="text-[14px] font-semibold leading-[18.2px] text-[#545D6A]"
+            href={"tel:+998711234567"}
+          >
+            +998 (71) 123-45-67
+          </Link>
           <Lang />
         </div>
       </div>

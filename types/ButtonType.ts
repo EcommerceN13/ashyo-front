@@ -1,10 +1,10 @@
 import React from "react";
 
 export interface ButtonType {
+    icon?: React.ReactNode | null;
+    iconPosition?: "left" | "right" | "center"
     title ?: string;
-    icon?: React.ReactNode;
-    iconPosition: "left" | "right" | "center"
-    onClick?: React.MouseEventHandler<HTMLButtonElement>;
     extraClass?: string;
+    onClick?: React.MouseEventHandler<HTMLButtonElement>;
     type: "button" | "submit";
 }
