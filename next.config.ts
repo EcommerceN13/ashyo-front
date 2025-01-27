@@ -1,12 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  images: {
-    remotePatterns: [
-      {
-        hostname: 'https://ashyo.store',
-      },]
-    }
+  /* config options here */
 };
 
 export default nextConfig;

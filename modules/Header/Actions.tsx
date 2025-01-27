@@ -10,12 +10,12 @@ const Actions = () => {
     },
     {
       id: 2,
-      bageCount: 11,
+      bageCount: 17,
       icon: <LikeIcon />,
     },
     {
       id: 3,
-      bageCount: 11,
+      bageCount: 17,
       icon: <BasketCartIcon />,
     },
     {
