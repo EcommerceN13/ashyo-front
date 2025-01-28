@@ -8,7 +8,6 @@ export const getCategories = (name?: string | null, setIsLoading?: React.Dispatc
 
     useEffect(() => {
         instance().get('/categories/all', {params}).then(res => {setData(res.data)
-            console.log(res.data)
         }).finally(() => {
             setTimeout(() => {
                 if(setIsLoading) setIsLoading(false)

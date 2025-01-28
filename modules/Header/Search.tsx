@@ -12,8 +12,8 @@ const Search = () => {
         placeholder="What are you looking for?"
       />
       <Button
-        extraClass="!py-[12px] !px-[10px] sm:!py-[16px] sm:!px-[20px] absolute top-0 right-0 !h-full"
-        iconPosition="left"
+        extrClass="!py-[12px] !px-[10px] sm:!py-[16px] sm:!px-[20px] absolute top-0 right-0 !h-full"
+        iconPostion="left"
         icon={
           <SearchIcon classList="!w-[16px] !h-[16px] sm:!w-[20px] sm:!h-[20px]" />
         }
