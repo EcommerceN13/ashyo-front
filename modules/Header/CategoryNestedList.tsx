@@ -20,7 +20,6 @@ const CategoryNestedList = () => {
 
   function showCategoryChildren(data: CategoryType) {
     setNestedChild(data?.subCategories || []);
-    console.log(data)
   }
 
   return (
@@ -30,10 +29,10 @@ const CategoryNestedList = () => {
         (e.target as HTMLElement).id === "menu_category" &&
         setShowCategory(false)
       }
-      className={showCategory ? "fixed inset-0" : ""}
+      className={showCategory ? "fixed inset-0 z-[999]" : ""}
     >
       <div
-        className={`containers px-0 w-full mx-auto right-0 left-0 duration-400 absolute top-0 sm:top-[146px] ${
+        className={`containers  px-0 w-full mx-auto right-0 left-0 duration-400 absolute top-0 inset-0 z-[99999] sm:top-[146px] ${
           showCategory ? "h-[100vh] sm:h-[570px]" : "h-0 opacity-0"
         } overflow-hidden flex bg-white shadow-md`}
       >

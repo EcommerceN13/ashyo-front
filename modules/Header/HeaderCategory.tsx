@@ -7,7 +7,6 @@ import React from "react";
 
 const HeaderCategory = () => {
   const categoryList: CategoryType[] = getCategories();
-  console.log(categoryList)
   return (
     <nav className="hidden lg:flex containers items-center justify-between">
         {categoryList?.map((item: CategoryType) => (
