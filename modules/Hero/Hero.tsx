@@ -19,10 +19,10 @@ const Hero = () => {
   return (
     <div className='bg-[rgb(237,237,237)] mb-[33px] sm:mb-[100px]'>
       <div className='containers'>
-        <Swiper pagination={true} modules={[Pagination]} className='mySwiper'>
+        <Swiper pagination={true} modules={[Pagination]} className='mySwiper z-[-1'>
           {isLoading ? <Skeleton className="absolute top-5 w-full h-[400px] rounded-lg" /> :
             banners.map((item: BannerType) => (
-              <SwiperSlide className='pt-[37px] pb-[63px] sm:pt-[145px] relative sm:pb-[150px]' key={item.id}>
+              <SwiperSlide className='pt-[37px] pb-[63px] z-[-99999] sm:pt-[145px] relative sm:pb-[150px]' key={item.id}>
                 <div className='w-full sm:w-[40%] lg:w-[596px]'>
                   <h2 className='font-bold text-[22px] sm:text-[44px] leading-[26.4px] sm:leading-[52.8px] sm:mb-[6px]'>{item.name}</h2>
                   <p className='font-normal text-[11px] text-[#545D6A] mb-[22px] sm:text-[16px]'>{item.description}</p>
