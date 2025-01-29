@@ -1,4 +1,5 @@
 "use client"
+
 import { access } from "fs";
 import { instance } from "../hooks/instance";
 import { SignInType, SignUpType } from "../types/AuthType";

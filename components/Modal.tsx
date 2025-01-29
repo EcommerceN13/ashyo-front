@@ -1,3 +1,4 @@
+
 "use client";
 import { CloseIcon } from '../icons/index';
 import { ModalType } from '@/types/ModalType';
