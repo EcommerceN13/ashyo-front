@@ -1,10 +1,12 @@
-import React from "react";
+import { MouseEventHandler, ReactNode } from "react";
 
-export interface ButtonType {
-    icon?: React.ReactNode | null;
-    iconPosition?: "left" | "right" | "center"
-    title ?: string;
-    extraClass?: string;
-    onClick?: React.MouseEventHandler<HTMLButtonElement>;
-    type: "button" | "submit";
+export interface ButtonType{
+    icon?:ReactNode,
+    iconPostion?:"left" | "right",
+    title?:string,
+    extrClass?:string,
+    type:"submit" | "button",
+    onClick?:MouseEventHandler<HTMLButtonElement>,
+    isLoading?:boolean,
+    loading?:ReactNode
 }

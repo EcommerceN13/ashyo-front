@@ -1,20 +1,13 @@
 "use client"
 import { instance } from "@/hooks/instance"
-import React, { SetStateAction, useEffect, useState } from "react"
+import { useQuery } from "@tanstack/react-query"
 
-export const getCategories = (name?: string | null, setIsLoading?: React.Dispatch<SetStateAction<boolean>>) => {
-    const params = {page: 1, limit: 1000, name:name ? name: null }
-    const [data, setData] = useState([])
+export const getCategories = (name?: string | null) => {
+    const params = { page: 1, limit: 1000, name: name ? name : null }
 
-    useEffect(() => {
-        instance().get('/categories/all', {params}).then(res => {setData(res.data)
-            console.log(res.data)
-        }).finally(() => {
-            setTimeout(() => {
-                if(setIsLoading) setIsLoading(false)
-            }, 800)
-        })
-    }, [name])
-
-    return data
+    const { data:categories = [], isLoading } = useQuery({
+        queryKey: ['categories', name],
+        queryFn: () => instance().get('/categories/all', { params }).then(res => res.data)
+    })
+    return {categories, isLoading}
 }
