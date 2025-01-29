@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Products from "@/components/Products";
 import Brend from "@/module/Brend";
 import CategoryMenu from "@/module/CategoryMenu";
@@ -14,5 +15,16 @@ export default function Home() {
     <CategoryMenu/>
     <Products title="On-sale Products" API='/product-item'/>
   </>
+=======
+import Brend from "@/modules/Brend/Brand";
+import Hero from "@/modules/Hero/Hero";
+
+export default function Home() {
+  return (
+    <>
+    <Hero/>
+    <Brend/>
+    </>
+>>>>>>> develop
   );
 }
