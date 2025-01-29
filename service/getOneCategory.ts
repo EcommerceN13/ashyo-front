@@ -7,7 +7,7 @@ export const getCategories = (name?: string | null) => {
 
     const { data: categories = [], isLoading } = useQuery({
         queryKey: ['categories', name],
-        queryFn: () => instance().get('/categories/all', {params}).then(res => res.data
+        queryFn: () => instance().get('/categories/', {params}).then(res => res.data
         )
     })
     console.log(categories)

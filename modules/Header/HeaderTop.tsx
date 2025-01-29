@@ -33,7 +33,7 @@ const HeaderTop = () => {
     ]
 
     return (
-        <div className="bg-[#EBFFF3] hidden sm:block py-[11px]">
+        <div className="bg-[#EBEFF3] hidden sm:block py-[11px]">
             <div className="flex items-center justify-between containers ">
                 <div className="flex items-center gap-[20px]">
                     {navList.map((item: HeaderTopListType) => (

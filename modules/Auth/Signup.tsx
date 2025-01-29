@@ -9,7 +9,7 @@ const SignUp: React.FC<{isLoading: boolean}> = ({isLoading}) => {
             <Input name='fullname' placeholder='Enter your fullname' type='text' />
             <Input name='email' placeholder='Enter your email' type='email' />
             <Input name='password' placeholder='Password' type='password' />
-            <Button loading={<Spinner color='white' size='md' />} isLoading={isLoading} extrClass='!w-full' type='submit' title='Sign Up' />
+            <Button loading={<Spinner color='white' size='md' />} isLoading={isLoading} extraClass='!w-full' type='submit' title='Sign Up' />
         </>
     )
 }

@@ -11,7 +11,7 @@ const SignIn: React.FC<{ isLoading: boolean }> = ({ isLoading }) => {
       <Button
         loading={<Spinner color="white" size="md" />}
         isLoading={isLoading}
-        extrClass="!w-full"
+        extraClass="!w-full"
         type="submit"
         title="Sign In"
       />
