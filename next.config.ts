@@ -4,9 +4,9 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'example.com',
+        hostname: 'api.ashyo.fullstackdev.uz',
         port: '',
-        pathname: '/account123/**',
+        pathname: '/uploads/**',
         search: '',
       },
       {
